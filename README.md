@@ -20,7 +20,7 @@
 - Qui sommes-nous ?
 
 # Description fonctionnelle du site :
-. Nos produits :
+# Nos produits :
  Chaque fiche produit est composée des informations structurées suivantes : 
 - Nom du produit
 - Note du produit 
@@ -28,7 +28,7 @@
 - Description du produit 
 - Région d'origine du produit
 L'utilisateur pourra depuis ces pages produits effectuer un ajout panier et poster un commentaire.
-. Espace Client :
+# Espace Client :
 Un utilisateur sera dans l'obligation de créer un compte client pour compléter un achat. Afin de créer un compte, l'utilisateur devra seulement fournir son adresse email et définir un mot de passe
 La création d'un compte est indispensable afin de pouvoir finaliser une commande.
 
