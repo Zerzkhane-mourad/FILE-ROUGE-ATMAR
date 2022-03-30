@@ -11,7 +11,7 @@
 - Le site sera intégralement "Responsive Design". 
 
 # Description fonctionnelle et technique
-Le site se décompose en 4 pages principales, toutes accessibles depuis le header du site, lui-même présent à l'identique sur l'ensemble des pages du site. Ces pages principales sont :
+- Le site se décompose en 4 pages principales, toutes accessibles depuis le header du site, lui-même présent à l'identique sur l'ensemble des pages du site. Ces pages principales sont :
 - Home
 - Nos produits
 - Espace Client
@@ -20,7 +20,7 @@ Le site se décompose en 4 pages principales, toutes accessibles depuis le heade
 - Qui sommes-nous ?
 
 # Description fonctionnelle du site :
-# Nos produits :
+. Nos produits :
  Chaque fiche produit est composée des informations structurées suivantes : 
 - Nom du produit
 - Note du produit 
@@ -28,7 +28,7 @@ Le site se décompose en 4 pages principales, toutes accessibles depuis le heade
 - Description du produit 
 - Région d'origine du produit
 L'utilisateur pourra depuis ces pages produits effectuer un ajout panier et poster un commentaire.
-# Espace Client :
+. Espace Client :
 Un utilisateur sera dans l'obligation de créer un compte client pour compléter un achat. Afin de créer un compte, l'utilisateur devra seulement fournir son adresse email et définir un mot de passe
 La création d'un compte est indispensable afin de pouvoir finaliser une commande.
 
