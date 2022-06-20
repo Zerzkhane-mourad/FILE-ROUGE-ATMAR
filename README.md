@@ -11,7 +11,7 @@
 - Le site sera intégralement "Responsive Design". 
 
 # Description fonctionnelle et technique
-- Le site se décompose en 4 pages principales, toutes accessibles depuis le header du site, lui-même présent à l'identique sur l'ensemble des pages du site. Ces pages principales sont :
+Le site se décompose en 4 pages principales, toutes accessibles depuis le header du site, lui-même présent à l'identique sur l'ensemble des pages du site. Ces pages principales sont :
 - Home
 - Nos produits
 - Espace Client
@@ -38,4 +38,5 @@ La création d'un compte est indispensable afin de pouvoir finaliser une command
 - Suivi des commandes 
 - Suivi et gestion des paiements 
 - Gestion des stocks 
+
 

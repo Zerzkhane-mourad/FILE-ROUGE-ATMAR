@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins'  ;
+}
+.bgh{
+    background-color:  hsla(28, 84%, 93%, 1) !important; 
+    border: none;   
+    font-family: 'Poppins' ;
+}
+.bgf{
+    background: hsla(19, 51%, 62%, 0.15) !important; 
+}
+.fontf{
+    font-family: 'Perpetua Titling MT';
+    font-style: normal;
+}
+.fontliv{
+    font-family:"perpetua-titling-mt-light";
+}
+.fonts{
+    font-family: 'Poppins'  ;
+}
+.colorb{
+   color:  hsla(28, 84%, 93%, 1);
+}
+
+.imagepr{
+    width: 10rem;
+    height: 10rem;
+}
+.imageav{
+    width: 3rem;
+    height: 3rem;
+}
+.fsf{
+    font-size: xx-small;
+}
+
+.single-product select{
+    display:block;
+    padding:10px;
+    margin-top:20px;
+}
+.single-product input{
+    width:50px;
+    height:40px;
+    padding-left:10px;
+     font-size:20px;
+    margin-right:10px;
+    border:1px solid#ff523b;
+}
+input:focus{
+    outline:none;
+}
+.single-product .fa{
+    color:#ff523b;
+    margin-left:10px;
+}
+.small-img-row{
+    display:flex;
+    justify-content:space-between;
+}
+.small-img-col{
+    flex-basis:24%;
+    cursor:pointer;
+}
+.logo{
+    width: 5rem;
+    /* height: 5rem; */
+}
+
+  
+        
