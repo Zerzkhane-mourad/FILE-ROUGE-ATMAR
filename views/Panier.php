@@ -5,11 +5,19 @@ $Panier = new PanierController();
 $Panier->supprimerPanier();
 ?>
 <?php
+if(isset($_POST['commander'])){
+$newCommande = new CommandeController();
+$newCommande-> ajoutercommande();   
+}
+?>
+<?php
 if(empty($_SESSION['id'])){
     Redirect::to('Dashboard'); 
 }else{
 require  'includes/header.php';
 ?>
+
+
     <div class="d-flex justify-content-between px-5  mt-4 align-items-baseline pt-4 pb-3 rounded-2 bgh">
         <div class="fontliv ps-4">
           <h5>LIVRAISON GRATUITE</h5>
@@ -105,49 +113,58 @@ require  'includes/header.php';
                 <div class="fonts  ">
                     <h4 class="fw-bolder">Détails de facturation</h4>
                 </div>
-                <form class="needs-validation" novalidate="" autocomplete="off">
+
+
+
+
+                <form method="POST">
                     <div class="row mb-2">
                         <div class="col">
                         <div class="form-outline">
                             <label class="mb-2 fonts font-weight-bold" for="email"><b>Prénom Nom</b></label>
-                            <input type="text" id="form7Example1" class="form-control rounded-0 border-dark" />
+                            <input type="text" class="form-control rounded-0 border-dark" name="nom_complet" >
                         </div>
                         </div>
                         <div class="col">
                             <div class="form-outline">
                                 <label class="mb-2 fonts font-weight-bold" for="email"><b>CIN</b></label>
-                                <input type="text" id="form7Example1" class="form-control rounded-0 border-dark" />
+                                <input type="text" class="form-control rounded-0 border-dark" name="cin">
                             </div>
                         </div>
                     </div>
                     <div class="font-weight-bold mb-2">
                         <label class="mb-2 fonts font-weight-bold" for="email"><b>Adresse</b></label>
-                        <input id="email" type="email" class="form-control rounded-0 border-dark" name="email" value="" required autofocus>
+                        <input type="text" class="form-control rounded-0 border-dark"  name="adresse">
                     </div>
                     <div class="row mb-2">
                         <div class="col">
                         <div class="form-outline">
                             <label class="mb-2 fonts font-weight-bold" for="email"><b>Ville</b></label>
-                            <input type="text" id="form7Example1" class="form-control rounded-0 border-dark" />
+                            <input type="text" class="form-control rounded-0 border-dark" name="ville">
                         </div>
                         </div>
                         <div class="col">
                             <div class="form-outline">
                                 <label class="mb-2 fonts font-weight-bold" for="email"><b>Code postale</b></label>
-                                <input type="text" id="form7Example1" class="form-control rounded-0 border-dark" />
+                                <input type="text" class="form-control rounded-0 border-dark"  name="code_postale">
                             </div>
                         </div>
                     </div>
                     <div class="font-weight-bold mb-2">
                         <label class="mb-2 fonts font-weight-bold" for="email"><b>Téléphone</b></label>
-                        <input id="email" type="email" class="form-control rounded-0 border-dark" name="email" value="" required autofocus>
+                        <input type="text" class="form-control rounded-0 border-dark" name="telephone" >
                     </div>
+                    <input type="hidden" name="id_client" value="<?php echo $iduser ?>" >
                     <div class="d-flex align-items-center fonts">
-                        <button type="button" class=" w-100 bg-black text-light b  py-2 px-4 rounded-0   ms-auto fonts  border-0 ">
+                        <button type="submit" name="commander" class=" w-100 bg-black text-light b  py-2 px-4 rounded-0   ms-auto fonts  border-0 ">
                             <b>Commander</b> 
                         </button>
                     </div>
                 </form>
+
+
+
+
             </div>
         </div>
     </div>

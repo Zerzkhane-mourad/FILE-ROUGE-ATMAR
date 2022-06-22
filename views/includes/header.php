@@ -1,8 +1,10 @@
 <?php
 if(isset($_SESSION['id'])){
   $user = $_SESSION['nom'];
+  $iduser = $_SESSION['id'];
 }else{
   $user= '';
+  $iduser='';
 }
 ?>
 

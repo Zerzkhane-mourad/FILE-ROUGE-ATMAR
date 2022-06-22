@@ -1,7 +1,8 @@
 <?php
 $exproduit = new ProduitController();
 $produit = $exproduit->getOneProd();
-
+?>
+<?php
 if(isset($_POST['submit'])){
     $panier = new PanierController();
     $panier = $panier->ajoutPanier();
@@ -25,7 +26,7 @@ if(isset($_POST['submit'])){
             <p class="fonts" >/<?php echo $produit['description'] ?></p>
             <form method="POST">
                 <input type="hidden" name="image" value="<?php echo $produit['image'] ?>" >
-                <input type="hidden" name="id_user" value="<?php echo $_SESSION['id'] ?>">
+                <input type="hidden" name="id_user" value="<?php echo $iduser?>">
                 <input type="hidden" name="id_produit" value="<?php echo $produit['id'] ?>">
                 <input type="hidden" name="nom" value="<?php echo $produit['nom'] ?>">
                 <input type="hidden" name="prix" value="<?php echo $produit['prix'] ?>">

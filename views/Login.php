@@ -3,10 +3,6 @@
     $login->authtifi();
 ?>
 <?php
-if (isset($_SESSION['id'])) {
-	Redirect::to('Home'); 
-} else{
-
 require  'includes/header.php';
 ?>     
 	
@@ -52,4 +48,3 @@ require  'includes/header.php';
 <?php
 require 'includes/footer.php';
 ?>	
-<?php }	?>
