@@ -12,8 +12,7 @@ class CommandeController{
                 'ville' => $_POST['ville'],
                 'code_postale' => $_POST['code_postale'],
                 'telephone' => $_POST['telephone'],
-            );
-            
+            );    
             $result = Commande::ajoutComm($data);
             if($result === 'ok'){
                 Redirect::to('Home');
@@ -21,6 +20,12 @@ class CommandeController{
                 echo $result;
             }
         }
+        
+    }
+
+    public function getAllCommande(){
+        $commandes = Commande::getAllComm();
+        return $commandes;
     }
 
 }

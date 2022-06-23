@@ -38,7 +38,9 @@
 .fsf{
     font-size: xx-small;
 }
-
+.navb{
+    margin-left: 10rem !important;
+}
 .single-product select{
     display:block;
     padding:10px;
@@ -69,8 +71,8 @@ input:focus{
 }
 .logo{
     width: 5rem;
-    /* height: 5rem; */
 }
+
 
   
         

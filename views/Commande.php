@@ -1,6 +1,9 @@
 <?php
+$data = new CommandeController();
+$commandes = $data->getAllCommande();
+?>
+<?php
 require  'includes/headersid.php';
-
 require 'includes/sidebar.php';
 ?>
 
@@ -15,8 +18,10 @@ require 'includes/sidebar.php';
               <table class="table">
                   <thead class=" bgh">
                       <tr>
+                          <th>Date de commande</th>
                           <th>image</th>
                           <th>Nom de produit</th>
+                          <th>Prix</th>
                           <th>Quantité</th>
                           <th>Nom </th>
                           <th>CIN</th>
@@ -27,18 +32,21 @@ require 'includes/sidebar.php';
                       </tr>
                   </thead>
                   <tbody>
-                  
+                  <?php foreach($commandes as $commande): ?>
                       <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td class="align-middle text-center"><?php echo $commande['date_de_commande']; ?></td>
+                          <td class="align-middle"><img  class="logo" src="public/image/<?php echo $commande['image']?>" alt="produit" ></td>
+                          <td class="align-middle"><?php echo $commande['nom_produit'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['prix'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['quantite'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['nom_complet'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['cin'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['adresse'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['ville'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['code_postale'] ?></td>
+                          <td class="align-middle text-center"><?php echo $commande['telephone'] ?></td>
                         </tr>   
+                    <?php endforeach ?>     
                   </tbody>
               </table>
           </div>

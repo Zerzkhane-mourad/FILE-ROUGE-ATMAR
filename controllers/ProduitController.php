@@ -27,6 +27,7 @@ class ProduitController{
                 'cooperative' => $_POST['cooperative'],
                 'description' => $_POST['description'],
                 'quantite' => $_POST['quantite'],
+                'statut' => $_POST['statut'],
             );
             $result = Produit::ajouter($data);
             move_uploaded_file($_FILES['image']['tmp_name'],'public/image/'.$_FILES['image']['name']);
@@ -49,7 +50,8 @@ class ProduitController{
                 'souscateguorie' => $_POST['souscateguorie'],
                 'cooperative' => $_POST['cooperative'],
                 'description' => $_POST['description'],
-                'quantite' => $_POST['quantite'],         
+                'quantite' => $_POST['quantite'], 
+                'statut' => $_POST['statut'],         
             ); 
             $result = Produit::modifier($data);
             if($result === 'ok'){
@@ -76,6 +78,18 @@ class ProduitController{
             $categuorie =$_GET['page'];
             $result = Produit::getCateguorie($categuorie);
             return $result;
+    }
+
+    public function getGout(){
+        $categuorie = 'Gout de Maroc';
+        $result = Produit::getCateguorie($categuorie);
+        return $result;
+    }
+
+
+    public function getStatut(){
+        $result = Produit::getStat();
+        return $result;
     }
 }
 

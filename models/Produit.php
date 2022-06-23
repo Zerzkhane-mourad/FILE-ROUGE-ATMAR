@@ -4,12 +4,10 @@ class Produit{
         $stmt = DB::connect()->prepare('SELECT * FROM produits');
         $stmt->execute();
         return $stmt->fetchAll();
-        $stmt->close();
-        $stmt = null;
     }
 
     static public function ajouter($data){
-        $stmt = DB::connect()->prepare('INSERT INTO produits (`image`, `nom`, `prix`, `categuorie`, `souscateguorie`, `cooperative`, `description`, `quantite`) Values (:image, :nom, :prix, :categuorie, :souscateguorie, :cooperative, :description, :quantite)');
+        $stmt = DB::connect()->prepare('INSERT INTO produits (`image`, `nom`, `prix`, `categuorie`, `souscateguorie`, `cooperative`, `description`, `quantite`, `statut`) Values (:image, :nom, :prix, :categuorie, :souscateguorie, :cooperative, :description, :quantite, :statut)');
         $stmt->bindParam(':image',$data['image']);
         $stmt->bindParam(':nom',$data['nom']);
         $stmt->bindParam(':prix',$data['prix']);
@@ -18,6 +16,7 @@ class Produit{
         $stmt->bindParam(':cooperative',$data['cooperative']);
         $stmt->bindParam(':description',$data['description']);
         $stmt->bindParam(':quantite',$data['quantite']);
+        $stmt->bindParam(':statut',$data['statut']);
         if($stmt->execute()){
             return 'ok';
         }else{
@@ -29,7 +28,7 @@ class Produit{
 
     static public function modifier($data){
         $stmt = DB::connect()->prepare('UPDATE produits SET image = :image, nom = :nom, prix = :prix, categuorie = :categuorie ,souscateguorie = :souscateguorie ,cooperative = :cooperative ,description = 
-        :description ,quantite= :quantite WHERE id= :id '); 
+        :description ,quantite= :quantite, statut= :statut WHERE id= :id '); 
         $stmt->bindParam(':id',$data['id']);
         $stmt->bindParam(':image',$data['image']);
         $stmt->bindParam(':nom',$data['nom']);
@@ -39,6 +38,7 @@ class Produit{
         $stmt->bindParam(':cooperative',$data['cooperative']);
         $stmt->bindParam(':description',$data['description']);
         $stmt->bindParam(':quantite',$data['quantite']);
+        $stmt->bindParam(':statut',$data['statut']);
 
         if($stmt->execute()){
             return 'ok';
@@ -81,5 +81,20 @@ class Produit{
             $stmt->execute();   
             return $stmt->fetchAll();     
     }
+
+    static function getStat(){
+        $query = ("SELECT * FROM produits WHERE statut = 'topvente' ");
+        $stmt =DB::connect()->prepare($query);
+        $stmt->execute();   
+        return $stmt->fetchAll();     
+    }
+
+    static public function CountProduit(){
+        $query = "SELECT COUNT(*) as countproduit FROM produits ";
+        $stmt = DB::connect()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
 
 }        

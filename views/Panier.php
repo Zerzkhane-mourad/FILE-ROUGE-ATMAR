@@ -11,8 +11,8 @@ $newCommande-> ajoutercommande();
 }
 ?>
 <?php
-if(empty($_SESSION['id'])){
-    Redirect::to('Dashboard'); 
+if(empty($_SESSION['id']) && $_SESSION['role'] !='client'){
+    Redirect::to('Login'); 
 }else{
 require  'includes/header.php';
 ?>

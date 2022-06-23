@@ -120,6 +120,12 @@ require 'includes/sidebar.php';
                             </div>
                             <input  type="text" class="form-control rounded-0 border-dark" name="quantite"  required>
                         </div>
+                        <div class="mb-2">
+                            <div class="mb-1 w-100">
+                                <label class="fonts"><b>Statut</b></label>
+                            </div>
+                            <input  type="text" class="form-control rounded-0 border-dark" name="statut"  required>
+                        </div>
                         <div class="d-flex align-items-center fonts pb-3">
                             <button type="submit"  name="submit" class=" w-100 bgh text-dark b  py-2 px-4 rounded-0   ms-auto fonts  border-0 ">
                                 <b>Ajouter</b> 

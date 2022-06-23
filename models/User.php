@@ -31,4 +31,15 @@ class User{
             echo 'erreur' . $ex->getMessage();
         }
     }
+    
+    static public function CountClient(){
+        
+        if(isset($_SESSION['id'])){
+            $id_user = $_SESSION['id'];
+            $query = "SELECT COUNT(*) as countclient FROM users WHERE role =  'client' ";
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchColumn();
+        }
+    }
 }

@@ -1,19 +1,19 @@
 <?php
 $exproduit = new ProduitController();
 $produit = $exproduit->getOneProd();
-?>
-<?php
 if(isset($_POST['submit'])){
     $panier = new PanierController();
     $panier = $panier->ajoutPanier();
-}  
+} 
+?>
+<?php
     require  'includes/header.php';
 ?> 
 
     <div class="container  single-product my-5">
             <div class="row justify-content-center align-items-center">
               <div class="col-lg-6 col-sm-8 ">
-                <img src="public/image/<?php echo $produit['image'] ?>" class="border p-3 border-dark border-2 w-100" id="ProductImg">
+                <img src="public/image/<?php echo $produit['image'] ?>" class="border-0  p-3 w-100" id="ProductImg">
             </div>
   
         <div class="col-lg-4 col-sm-8">
@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
                 <input type="hidden" name="id_produit" value="<?php echo $produit['id'] ?>">
                 <input type="hidden" name="nom" value="<?php echo $produit['nom'] ?>">
                 <input type="hidden" name="prix" value="<?php echo $produit['prix'] ?>">
-                <button type="submit" name="submit" class=" w-100 bg-light text-dark b  py-2 px-4 rounded-0 border-1  ms-auto fonts  border-dark ">
+                <button type="submit" name="submit" class=" w-100 bg-dark text-white b  py-2 px-4 rounded-0 border-1  ms-auto fonts  border-dark ">
                 <b>AJOUTER AU PANIER </b>
                 </button>
             </form>
@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
 <div class="container w-75 form-group">
     <label for="exampleFormControlTextarea1 " class="fonts f mb-3 fs-3 fw-bold" >votre avis est précieux</label>
     <textarea class="form-control border-dark rounded-0" id="exampleFormControlTextarea1" rows="3"></textarea>
-    <button  class="mt-3 w-100 text-black bg-light b  py-2 px-4 rounded-0   ms-auto fonts  border-dark ">
+    <button  class="mt-3 w-100 text-white bg-dark b  py-2 px-4 rounded-0   ms-auto fonts  border-dark ">
         <b>COMMENTER</b> 
     </button>
 </div>

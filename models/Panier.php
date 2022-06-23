@@ -57,10 +57,12 @@ class Panier{
     }
 
     static public function Count(){
-
+        if(isset($_SESSION['id'])){
+            $id_user = $_SESSION['id'];
+            $query = "SELECT COUNT(*) as countpanier FROM panier WHERE id_user = '$id_user'";
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchColumn();   
+        }
     }
-
-    
-
-
 }

@@ -31,39 +31,45 @@ require  'includes/headersid.php';
                                 </div>
                                 <div class="mb-1">
                                     <div class="mb-1 w-100">
-                                        <label class="fonts" for="password"><b>Prix</b></label>
+                                        <label class="fonts" ><b>Prix</b></label>
                                     </div>
                                     <input  type="text" class="form-control rounded-0 border-dark" name="prix" value="<?php echo $produit['prix']; ?>" required>
                                 </div>
                                 <div class="mb-1">
                                     <div class="mb-1 w-100">
-                                        <label class="fonts" for="password"><b>Catéguorie</b></label>
+                                        <label class="fonts" ><b>Catéguorie</b></label>
                                     </div>
                                     <input  type="text" class="form-control rounded-0 border-dark" name="categuorie" value="<?php echo $produit['categuorie']; ?>" required>
                                 </div>
                                 <div class="mb-1">
                                     <div class="mb-1 w-100">
-                                        <label class="fonts" for="password"><b>Sous-Catéguorie</b></label>
+                                        <label class="fonts" ><b>Sous-Catéguorie</b></label>
                                     </div>
                                     <input  type="text" class="form-control rounded-0 border-dark" name="souscateguorie" value="<?php echo $produit['souscateguorie']; ?>" required>
                                 </div>
                                 <div class="mb-1">
                                     <div class="mb-1 w-100">
-                                        <label class="fonts" for="password"><b>Coopérative</b></label>
+                                        <label class="fonts" ><b>Coopérative</b></label>
                                     </div>
                                     <input  type="text" class="form-control rounded-0 border-dark" name="cooperative" value="<?php echo $produit['cooperative']; ?>" required>
                                 </div>
                                 <div class="mb-1">
                                     <div class="mb-1 w-100">
-                                        <label class="fonts" for="password"><b>Déscription</b></label>
+                                        <label class="fonts" ><b>Déscription</b></label>
                                     </div>
                                     <textarea class="form-control border-dark rounded-0" id="exampleFormControlTextarea1" name="description" rows="3" ><?php echo $produit['description']; ?></textarea>
                                 </div>
                                 <div class="mb-2">
                                     <div class="mb-1 w-100">
-                                        <label class="fonts" for="password"><b>Quantité</b></label>
+                                        <label class="fonts" ><b>Quantité</b></label>
                                     </div>
                                     <input  type="text" class="form-control rounded-0 border-dark" name="quantite" value="<?php echo $produit['quantite']; ?>"  required>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="mb-1 w-100">
+                                        <label class="fonts" ><b>Statut</b></label>
+                                    </div>
+                                    <input  type="text" class="form-control rounded-0 border-dark" name="statut" value="<?php echo $produit['statut']; ?>"  required>
                                 </div>
                                 <input  type="hidden" name="id" class="form-control rounded-0 border-dark" name="quantite" value="<?php echo $produit['id']; ?>"  required>
                                 <div class="d-flex align-items-center fonts pb-3">

@@ -1,8 +1,14 @@
 <?php
-if(isset($_SESSION['id'])){
+  $data = new Panier();
+  $count= $data->Count();
+?>
+<?php
+if(isset($_SESSION['id'])  && $_SESSION['role'] =='client'){ 
+  $count= $data->Count();
   $user = $_SESSION['nom'];
   $iduser = $_SESSION['id'];
 }else{
+  $count='0';
   $user= '';
   $iduser='';
 }
@@ -27,8 +33,8 @@ if(isset($_SESSION['id'])){
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navb  navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  me-auto mb-2 mb-lg-0 ms-lg-5">
+          <div class="navb collapse  navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav   me-auto mb-2 mb-lg-0 ms-lg-5">
               <li class="nav-item">
                 <a class="nav-link"  href="Home">Accueil</a>
               </li>
@@ -63,7 +69,7 @@ if(isset($_SESSION['id'])){
               <a href="Panier" class="position-relative">
                 <i  class="text-black fa-solid fa-cart-shopping"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    2
+                    <?php  echo $count ?>
                 </span>
                 </a>
               </div>

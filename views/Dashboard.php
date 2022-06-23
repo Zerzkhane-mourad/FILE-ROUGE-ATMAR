@@ -1,7 +1,13 @@
 <?php
+$produit = new Produit();
+$count= $produit->CountProduit();
+$client = new User();
+$countclient = $client->CountClient();
+?>
+<?php
 require  'includes/headersid.php';
 require 'includes/sidebar.php';
-if(empty($_SESSION['id'])){
+if(empty($_SESSION['id']) && $_SESSION['role']!='admin'){
     Redirect::to('Login'); 
 }else{
 ?> 
@@ -17,7 +23,7 @@ if(empty($_SESSION['id'])){
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                              300
+                              <?php echo $count ; ?>
                             </h2>
                         </div>
                     </div>
@@ -51,7 +57,7 @@ if(empty($_SESSION['id'])){
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                57
+                               <?php echo  $countclient ?>
                             </h2>
                         </div>
                     </div>
@@ -68,7 +74,7 @@ if(empty($_SESSION['id'])){
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                10
+                                5
                             </h2>
                         </div>
                     </div>

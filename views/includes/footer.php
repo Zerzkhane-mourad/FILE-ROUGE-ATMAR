@@ -1,8 +1,8 @@
     <footer class="text-lg-start bgf text-black py-3 mt-5 fonts">     
             <section class="">
             <div class="container text-center text-md-start">
-                <div class="row mt-3">
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
+                <div class="row mt-1">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2 ">
                     <h6 class="text-uppercase fw-bold  mb-4">Nos catégories</h6>
                     <p>
                     <a class="text-decoration-none text-black" href="">Homme</a>

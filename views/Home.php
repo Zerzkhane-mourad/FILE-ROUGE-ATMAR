@@ -1,4 +1,10 @@
 <?php
+$data = new ProduitController();
+$produits = $data->getStatut();
+$data = new ProduitController();
+$goutprods = $data->getGout();
+?>
+<?php
 require  'includes/header.php';
 ?>       
       
@@ -15,13 +21,21 @@ require  'includes/header.php';
       <div class="fontf mt-5 ms-5">
         <h5>LE GOÛT DU MAROC</h5>
       </div>
-      <div class="mt-4  container-fluid">
-          <div class="row m-0">
-                <div class="col "><img class="imagepr" src="public/image/produit1.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="col "><img class="imagepr" src="public/image/produit2.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="col "><img class="imagepr" src="public/image/produit3.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="col "><img class="imagepr" src="public/image/produit4.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="imagepr col "><img class="imagepr" src="public/image/produit6.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
+      <div class="container bg-white">
+          <div class="bg-white d-flex flex-wrap">
+          <?php foreach ($goutprods as $goutprod) :?>
+                  <div class=" w-25 p-4 " style="">
+                      <div class="ms-3" style="height: 100%;">
+                          <form method="Post" action="Produitdet" style="height: 100%; height : 100%;">
+                              <input type="hidden" name="id" value="<?php echo $goutprod['id']  ?>">
+                              <button class="border-0 bg-white" style="">
+                                  <img style="width= 14rem; height: 14rem;"  src="public/image/<?php echo $goutprod['image'] ?>" alt="produit" style="width:100%; height : 100%;">
+                                  <p name="nom" class="text-start pt-3 "><?php echo $goutprod['nom'] ?><br><span class="text-secondary">Coopérative : <?php echo $goutprod['cooperative']?></span> <br><b><?php echo $goutprod['prix']?>Dhs</b></p>
+                              </button>
+                          </form>
+                      </div>
+                  </div>
+          <?php endforeach; ?>
           </div>
       </div>
       <div class="mt-3" style="background-image: url(public/image/decoration.png);  width: 100%">
@@ -37,13 +51,21 @@ require  'includes/header.php';
       <div class="fontf mt-5 ms-5">
         <h5>Top vent</h5>
       </div>
-      <div class="mt-4  container-fluid">
-          <div class="row">
-                <div class="col "><a href="produit"><img class="imagepr" src="public/image/produit6.png" alt=""></a><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="col "><img class="imagepr" src="public/image/produit7.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="col "><img class="imagepr" src="public/image/produit8.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="col "><img class="imagepr" src="public/image/produit9.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
-                <div class="col "><img class="imagepr" src="public/image/produit5.png" alt=""><p class="mt-2">Amlou Beldi - 190g <br>coopérative<br><b>65 Dhs</b></p></div>
+      <div class="container bg-white">
+          <div class="bg-white d-flex flex-wrap ">
+          <?php foreach ($produits as $produit) :?>
+                  <div class=" w-25 p-4 " style="">
+                      <div class="ms-3" style="height: 100%;">
+                          <form method="Post" action="Produitdet" style="height: 100%; height : 100%;">
+                              <input type="hidden" name="id" value="<?php echo $produit['id']  ?>">
+                              <button class="border-0 bg-white" style="">
+                                  <img style="width= 14rem; height: 14rem;" src="public/image/<?php echo $produit['image'] ?>" alt="produit" style="width:100%; height : 100%;">
+                                  <p name="nom" class="text-start pt-3 "><?php echo $produit['nom'] ?><br><span class="text-secondary">Coopérative : <?php echo $produit['cooperative']?></span> <br><b><?php echo $produit['prix']?>Dhs</b></p>
+                              </button>
+                          </form>
+                      </div>
+                  </div>
+          <?php endforeach; ?>
           </div>
       </div>
       <div class="d-flex justify-content-around  align-items-baseline pt-4 pb-3 rounded-2 bgh">

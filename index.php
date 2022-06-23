@@ -5,7 +5,7 @@
 
     $home = new HomeController();
 
-    $pages = ['Home','Contact','Femme','Gourmet','Homme','Login','Panier','Produitdet','Signup','Dashboard','Produitlis','Commande','Updatepro','logout'];
+    $pages = ['Home','Contact','Femme','Gourmet','Homme','Login','Panier','Produitdet','Signup','Dashboard','Produitlis','Commande','Updatepro','logout','Message'];
 
     if(isset($_GET['page'])){
         if(in_array($_GET['page'],$pages)){

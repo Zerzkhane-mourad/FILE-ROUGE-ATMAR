@@ -1,12 +1,15 @@
 <div class="wrapper d-flex  ">
 		<nav id="sidebar" class="active bgh" >
-			<h1><a  href="" class="logo mt-3 text-dark">M.</a></h1>
+			<h4><a  href="" class="logo ps-2 mt-3 text-dark">Atmar</a></h4>
             <ul class="list-unstyled components mt-5  ">
                 <li class="active">
                     <a class="text-dark"   href="Dashboard"><span class="fa fa-home tex-dark "></span>Statistique</a>
                 </li>
                 <li>
                     <a class="text-dark" href="Produitlis"><span class="fa fa-user tex-dark"></span>Produit</a>
+                </li>
+                <li>
+                    <a class="text-dark" href="Message"><span class="fa fa-user tex-dark"></span>Message</a>
                 </li>
                 <li>
                     <a class="text-dark" href="Commande"><span class="fa fa-sticky-note "></span>Commande</a>
