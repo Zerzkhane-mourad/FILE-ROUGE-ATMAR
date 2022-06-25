@@ -12,19 +12,20 @@ class Commande{
         $stmt->bindParam(':ville',$data['ville']);
         $stmt->bindParam(':code_postale',$data['code_postale']);
         $stmt->bindParam(':telephone',$data['telephone']);
-        if($stmt->execute()){
-            return 'ok';
-        }else{
-            return 'error';
-        }
+        $stmt->execute();
+
     }
 
     static public function getAllComm(){
         $stmt = DB::connect()->prepare('SELECT * FROM commande INNER JOIN detlivraison on commande.id_user = detlivraison.id_user');
         $stmt->execute();
         return $stmt->fetchAll();
-        $stmt->close();
-        $stmt = null;
+    }
+
+    
+    static public function Valider(){
+        $dele=DB::connect()->prepare("DELETE FROM panier ");
+        $dele->execute();
     }
     
 }

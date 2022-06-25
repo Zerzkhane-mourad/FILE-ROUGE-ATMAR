@@ -24,8 +24,19 @@ class CommandeController{
     }
 
     public function getAllCommande(){
-        $commandes = Commande::getAllComm();
-        return $commandes;
+        if(isset($_SESSION['id']) && $_SESSION['role']=='admin'){   
+            $commandes = Commande::getAllComm();
+            return $commandes;
+        }else{
+            Redirect::to('Home');
+        }
     }
+
+    public function ValiderCommande(){
+        if(isset($_POST['valider'])){
+            $result = Commande::Valider();
+        }
+    }
+
 
 }

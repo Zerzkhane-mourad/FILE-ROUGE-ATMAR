@@ -14,7 +14,11 @@ class MessageController{
     }
 
     public function getAllMessage(){
-        $messages = Message::getAll();
-        return $messages;
+        if(isset($_SESSION['id']) && $_SESSION['role']=='admin'){   
+            $messages = Message::getAll();
+            return $messages;
+        }else{
+            Redirect::to('Home');
+        }    
     }
 }    

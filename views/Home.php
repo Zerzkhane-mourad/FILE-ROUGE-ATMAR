@@ -52,9 +52,9 @@ require  'includes/header.php';
         <h5>Top vent</h5>
       </div>
       <div class="container bg-white">
-          <div class="bg-white d-flex flex-wrap ">
+          <div class="bg-white row ">
           <?php foreach ($produits as $produit) :?>
-                  <div class=" w-25 p-4 " style="">
+                  <div class="col-2 w-25 p-4  " style="">
                       <div class="ms-3" style="height: 100%;">
                           <form method="Post" action="Produitdet" style="height: 100%; height : 100%;">
                               <input type="hidden" name="id" value="<?php echo $produit['id']  ?>">

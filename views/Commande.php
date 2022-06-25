@@ -1,18 +1,23 @@
 <?php
 $data = new CommandeController();
 $commandes = $data->getAllCommande();
+$valide = new CommandeController();
+$valide->ValiderCommande();
 ?>
 <?php
 require  'includes/headersid.php';
 require 'includes/sidebar.php';
 ?>
-
-
 <div class="container-fuildcol">
           <div class="d-flex flex-row justify-content-between align-items-center  pt-2">
               <div class="mx-4">
                   <h3><strong>Liste des Commandes</strong></h3>
-              </div>  
+              </div>
+              <form method="POST">
+                <div class="d-flex flex-row ">   
+                        <button type = "submit" name="valider" class="btn bgf text-dark h-25 fs-6 mx-4  "  >Valider les Commandes</button>                    
+                </div>
+              </form>   
           </div> 
           <div class="tab table-responsive mt-2">
               <table class="table">

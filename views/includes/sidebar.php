@@ -6,10 +6,10 @@
                     <a class="text-dark"   href="Dashboard"><span class="fa fa-home tex-dark "></span>Statistique</a>
                 </li>
                 <li>
-                    <a class="text-dark" href="Produitlis"><span class="fa fa-user tex-dark"></span>Produit</a>
+                    <a class="text-dark" href="Produitlis"><span class="fa-solid fa-cart-shopping"></span>Produit</a>
                 </li>
                 <li>
-                    <a class="text-dark" href="Message"><span class="fa fa-user tex-dark"></span>Message</a>
+                    <a class="text-dark" href="Message"><span class="fa-solid fa-message-dots"></span>Message</a>
                 </li>
                 <li>
                     <a class="text-dark" href="Commande"><span class="fa fa-sticky-note "></span>Commande</a>

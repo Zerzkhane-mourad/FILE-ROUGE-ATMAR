@@ -28,7 +28,6 @@ class UsersController{
             $data['email'] = $_POST['email'];
             $result = User::login($data);
             if($result->email === $_POST['email'] && $result->password === $_POST['password']){
-                $_SESSION['logged'] = true;
                 $_SESSION['nom'] =$result->nom;
                 $_SESSION['id'] = $result->id;
 

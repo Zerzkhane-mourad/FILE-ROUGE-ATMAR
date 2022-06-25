@@ -3,6 +3,10 @@ $data = new PanierController();
 $paniers = $data->getAllPanier();
 $Panier = new PanierController();
 $Panier->supprimerPanier();
+$cal = new PanierController();
+$calculs = $cal->getAllCalcul();
+$total = new PanierController();
+$totales= $total->getAllToltale();
 ?>
 <?php
 if(isset($_POST['commander'])){
@@ -11,9 +15,6 @@ $newCommande-> ajoutercommande();
 }
 ?>
 <?php
-if(empty($_SESSION['id']) && $_SESSION['role'] !='client'){
-    Redirect::to('Login'); 
-}else{
 require  'includes/header.php';
 ?>
 
@@ -82,14 +83,16 @@ require  'includes/header.php';
                             <p>Sous-Total</p>
                         </div>
                     </div>
+                    <?php foreach($calculs as $calcul): ?>
                     <div class="d-flex justify-content-between ">
                         <div>
-                            <p>Amlou Beldi</p>
+                            <p><?php echo $calcul['nom']; ?></p>
                         </div>
                         <div>
-                            <p>120 Dhs</p>
+                            <p><?php echo $calcul['totale_prix']; ?></p>
                         </div>
                     </div>
+                    <?php endforeach ?> 
                     <div class="d-flex justify-content-between ">
                         <div>
                             <p>livraison</p>
@@ -102,9 +105,11 @@ require  'includes/header.php';
                         <div>
                             <p>Totale</p>
                         </div>
+                        <?php foreach($totales as $totale): ?>
                         <div>
-                            <p>200 Dhs</p>
+                            <p><?php echo $totale['total']?> Dhs</p>
                         </div>
+                        <?php endforeach ?> 
                     </div>
 
                 </div>   
@@ -171,5 +176,4 @@ require  'includes/header.php';
 <?php
 require 'includes/footer.php';
 ?>
-<?php  } ?>  
   

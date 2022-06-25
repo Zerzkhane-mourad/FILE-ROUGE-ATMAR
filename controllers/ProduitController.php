@@ -2,8 +2,12 @@
 class ProduitController{
 
     public function getAllProd(){
-        $produits = Produit::getAll();
-        return $produits;
+        if(isset($_SESSION['id']) && $_SESSION['role']=='admin'){     
+            $produits = Produit::getAll();
+            return $produits;
+        }else{
+            Redirect::to('Home');
+        }    
     }
 
     public function getOneProd(){

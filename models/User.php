@@ -7,39 +7,31 @@ class User{
         $stmt->bindParam(':email',$data['email']);
         $stmt->bindParam(':password',$data['password']);
         $stmt->bindParam(':role',$data['role']);
-        if($stmt->execute()){
-            return 'ok';
-        }else{
-            return 'error';
-        }
-        $stmt->close();
-        $stmt = null;
+        $stmt->execute();
     }
 
     static public function login($data){
         $email = $data['email'];
-        try {
             $query = 'SELECT * FROM users WHERE email=:email';
             $stmt = DB::connect()->prepare($query);
             $stmt->execute(array(":email" => $email));
             $user = $stmt->fetch(PDO::FETCH_OBJ);
             return $user;
-            if($stmt->execute()){
-                return 'ok';
-            }
-        }catch(PDOException $ex){
-            echo 'erreur' . $ex->getMessage();
-        }
+        
     }
     
     static public function CountClient(){
-        
-        if(isset($_SESSION['id'])){
-            $id_user = $_SESSION['id'];
-            $query = "SELECT COUNT(*) as countclient FROM users WHERE role =  'client' ";
-            $stmt = DB::connect()->prepare($query);
-            $stmt->execute();
-            return $stmt->fetchColumn();
+        if($_SESSION['role'] == 'admin'){
+            if(isset($_SESSION['id'])){
+                $id_user = $_SESSION['id'];
+                $query = "SELECT COUNT(*) as countclient FROM users WHERE role =  'client' ";
+                $stmt = DB::connect()->prepare($query);
+                $stmt->execute();
+                return $stmt->fetchColumn();
+            }
+        }else{
+            Redirect::to('Home');
         }
     }
-}
+
+}    

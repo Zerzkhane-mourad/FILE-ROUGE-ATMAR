@@ -1,6 +1,5 @@
 <?php
 
-
     $creeUser = new UsersController();
     $creeUser->inscription();
 
@@ -18,31 +17,35 @@ require  'includes/header.php';
 					</div>
 					<div class="card shadow-lg border-0">
 						<div class="card-body px-5 py-3">
-							<form method="POST">
+							<form method="POST" id="form">
 								<div class="mb-3 font-weight-bold pt-2">
 									<label class="mb-2 fonts font-weight-bold" for="email"><b>Nom</b></label>
-									<input id="nom" type="text" class="form-control rounded-0 border-dark" name="nom" value="" required >
+									<input id="name" type="text" class="form-control rounded-0 border-dark" name="nom"  >
+									<small id="messagename" class="text-danger"></small>
 								</div>
                                 
                                 <div class="mb-3">
 									<div class="mb-2 w-100">
 										<label class="fonts" for="email"><b>Email</b></label>
 									</div>
-									<input id="email" type="email" class="form-control rounded-0 border-dark" name="email" required>
+									<input id="email" type="email" class="form-control rounded-0 border-dark" name="email">
+									<small id="messageemail" class="text-danger "></small>
 								</div>
 
 								<div class="mb-3">
 									<div class="mb-2 w-100">
 										<label class="fonts" for="password"><b>Mot de pass</b></label>
 									</div>
-									<input id="password" type="password" class="form-control rounded-0 border-dark" name="password" required>
+									<input id="password" type="password" class="form-control rounded-0 border-dark" name="password">
+								    <small id="messagepassword" class="text-danger "></small>
 								</div>
 
                                 <div class="mb-3">
 									<div class="mb-2 w-100">
 										<label class="fonts" for="password"><b>CONFIRM Mot de pass</b></label>
 									</div>
-									<input id="password" type="password" class="form-control rounded-0 border-dark" name="confirmpassword" required>
+									<input id="conpassword" type="password" class="form-control rounded-0 border-dark" name="confirmpassword">
+									<small id="messageconfpass" class="text-danger "></small>
 								</div>
 
 								<div class="d-flex align-items-center fonts pb-3">
@@ -60,4 +63,5 @@ require  'includes/header.php';
 	</section>
 <?php
 require 'includes/footer.php';
+
 ?>	

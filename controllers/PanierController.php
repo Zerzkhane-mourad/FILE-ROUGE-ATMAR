@@ -19,11 +19,13 @@ class PanierController{
         }    
     }
     public function getAllPanier(){
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']=='client'){
             $id_user =$_SESSION['id'];
             $paniers = Panier::getAllPan($id_user);
             return $paniers;  
-        } 
+        }else{
+            Redirect::to('Home');
+        }
     }
     
     public function getOnPanier(){
@@ -50,6 +52,15 @@ class PanierController{
                 echo $result;
             }
         }
+    }
+
+    public function getAllCalcul(){
+        $calculs = Panier::Calcul();
+        return $calculs;
+    }
+    public function getAllToltale(){
+        $totales = Panier::Totale();
+        return $totales;
     }
  
 }

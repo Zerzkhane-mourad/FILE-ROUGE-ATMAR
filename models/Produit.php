@@ -17,13 +17,7 @@ class Produit{
         $stmt->bindParam(':description',$data['description']);
         $stmt->bindParam(':quantite',$data['quantite']);
         $stmt->bindParam(':statut',$data['statut']);
-        if($stmt->execute()){
-            return 'ok';
-        }else{
-            return 'error';
-        }
-        $stmt->close();
-        $stmt = null;
+        $stmt->execute();
     }
 
     static public function modifier($data){
@@ -39,30 +33,15 @@ class Produit{
         $stmt->bindParam(':description',$data['description']);
         $stmt->bindParam(':quantite',$data['quantite']);
         $stmt->bindParam(':statut',$data['statut']);
-
-        if($stmt->execute()){
-            return 'ok';
-        }else{
-            return 'error';
-        }
-        $stmt->close();
-        $stmt = null;
+        $stmt->execute();
     }
 
     static public function supprimer($data){
         $id = $data['id'];
-        try {
-            $query = 'DELETE  FROM produits WHERE id=:id';
-            $stmt = DB::connect()->prepare($query);
-            $stmt->execute(array(":id" => $id));
-            if($stmt->execute()){
-                return 'ok';
-            }else{
-                return 'error';
-            }
-        }catch(PDOException $ex){
-            echo 'erreur' . $ex->getMessage();
-        }
+        $query = 'DELETE  FROM produits WHERE id=:id';
+        $stmt = DB::connect()->prepare($query);
+        $stmt->execute(array(":id" => $id));
+        $stmt->execute();
     }
 
     static function getProd($data){
@@ -90,10 +69,17 @@ class Produit{
     }
 
     static public function CountProduit(){
-        $query = "SELECT COUNT(*) as countproduit FROM produits ";
-        $stmt = DB::connect()->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchColumn();
+        if(isset($_SESSION['id']) && $_SESSION['role']=='admin'){   
+            $query = "SELECT COUNT(*) as countproduit FROM produits ";
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchColumn();
+
+        }else{
+            Redirect::to('Login');
+        }
+
+    
     }
 
 

@@ -3,6 +3,9 @@ $data = new MessageController();
 $messages = $data->getAllMessage();
 ?>
 <?php
+if(empty($_SESSION['id'])){
+    Redirect::to('Login'); 
+}else{
 require  'includes/headersid.php';
 require 'includes/sidebar.php';
 ?>
@@ -38,3 +41,4 @@ require 'includes/sidebar.php';
           </table>
       </div>
     </div>
+    <?php }?>
